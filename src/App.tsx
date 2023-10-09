@@ -1,8 +1,10 @@
+import {useState} from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Container from "./components/Container";
 import Home from "./components/Home";
 import { Provider } from "react-redux";
 import store from "./utils/store/store";
+import { searchContext } from "./utils/searchContext";
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -18,11 +20,14 @@ const BrowserRouter = createBrowserRouter([
 ]);
 
 function App() {
+  const [searchText, setSearchText]=useState("")
   return (
     <>
+    <searchContext.Provider value={{searchText,setSearchText}} >
       <Provider store={store}>
         <RouterProvider router={BrowserRouter} />
       </Provider>
+      </searchContext.Provider>
     </>
   );
 }

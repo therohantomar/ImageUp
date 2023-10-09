@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { UnsplashDataType } from "../../interfaces&types/UnsplashPhotosDatatype";
-
-const memoizedPhotos:UnsplashDataType[]=[]
+import { UnsplashSearchTypes } from "../../interfaces&types/UnsplashSearchTypes";
+const memoizedPhotos:UnsplashDataType[] | UnsplashSearchTypes=[]
 
 const initialState={memoizedPhotos}
 
