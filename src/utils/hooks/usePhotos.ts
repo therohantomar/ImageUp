@@ -22,11 +22,15 @@ export default function usePhotos(searchText: string | undefined) {
 
     }
     async function getPhotos() {
-        if (memoizedPhotos.length === 0) {
+        
+        if (memoizedPhotos?.length === 0) {
             const data = await fetch(NEW_PHOTOS_LINK + import.meta.env.VITE_APP_ACCESS_KEY)
             const Photos: UnsplashDataType[] = await data.json()
             setPhotos(Photos)
             dispatch(GetPhotos(Photos))
+        }
+        else if(memoizedPhotos===undefined){   
+            getPhotos()
         }
         else {
             setPhotos(memoizedPhotos)
@@ -36,16 +40,14 @@ export default function usePhotos(searchText: string | undefined) {
 
     useEffect(() => {
         let timeoutId: number | undefined
-        if (searchText !== "") {
-            timeoutId = setTimeout(() => {
-                getPhotosByQuery(searchText)
-
-            }, 300)
+        if (searchText === "") {
+            getPhotos()
         }
         else {
-            getPhotos()
-
-        }
+            timeoutId = setTimeout(() => {
+                getPhotosByQuery(searchText)
+            }, 300)
+         }
         return () => {
             clearTimeout(timeoutId)
         }

@@ -21,12 +21,13 @@ function Photocard({
   urls: urls;
 }) {
   return (
-    <div className="bg-gray-200">
+    <div >
       <Link to={"photos/" + id}>
         <img
-          src={urls.small}
-          className="hover:shadow-xl  hover:rounded-md w-full h-auto mansory"
+          src={urls.full}
+          className="hover:shadow-xl  hover:rounded-md w-full h-auto "
           alt={slug}
+          loading="lazy"
         />
       </Link>
     </div>
