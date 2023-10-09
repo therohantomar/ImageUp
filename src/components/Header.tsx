@@ -1,5 +1,6 @@
 import Navbar from "./Navbar"
 
+
 const Header = () => {
   return (
     <header className="flex flex-col items-center ">
@@ -8,12 +9,11 @@ const Header = () => {
          <span className=" w-2/3 ">
             <h1 className="font-bold  text-white text-xl  uppercase">Search by Choice</h1>
             <span className="w-full shadow-xl rounded-tl-md rounded-bl-md  flex outline-2 ">
-            <input type="text"   value={''} onChange={()=>{}} placeholder="Search hd images...."  className="w-full  rounded-tl-md rounded-bl-md font-bold my-2  outline-none p-2 " />
+            <input type="text"   value={''} onChange={()=>{}}  placeholder="Search hd images...."  className="w-full  rounded-tl-md rounded-bl-md font-bold my-2  outline-none p-2 " />
             <button className="bg-black text-white font-bold my-2 p-2">Search</button>
             </span>
          </span>
         </div>
-      
     </header>
   )
 }
