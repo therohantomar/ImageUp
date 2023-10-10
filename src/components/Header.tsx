@@ -29,9 +29,6 @@ const Header = () => {
               placeholder="Search hd images...."
               className="w-full  rounded-tl-md rounded-bl-md font-bold my-2  outline-none p-2 "
             />
-            <button className="bg-black text-white font-bold my-2 p-2">
-              Search
-            </button>
           </span>
         </span>
       </div>

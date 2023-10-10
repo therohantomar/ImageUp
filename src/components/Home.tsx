@@ -11,6 +11,15 @@ const Home = React.memo(() => {
   const photos:UnsplashDataType[] | UnsplashSearchTypes  = usePhotos(searchText);
   const deferedPhotos=useDeferredValue(photos)
 
+if(Array.isArray(deferedPhotos)){
+  if(deferedPhotos?.length===0){
+    return(<main className="my-20">
+      <h1 className="text-xl font-bold">There is no matching content with {searchText}</h1>
+    </main>)
+  }
+}
+  
+
   return (
     <main className="my-8">
       <h1 className="font-bold text-xl font-sans my-10 mx-10 uppercase">Disover the new captures clicks by camera</h1>
