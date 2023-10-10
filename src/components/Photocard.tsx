@@ -21,7 +21,7 @@ function Photocard({
   urls: urls;
 }) {
   return (
-    <div >
+    <div>
       <Link to={"photos/" + id}>
         <img
           loading="eager"
