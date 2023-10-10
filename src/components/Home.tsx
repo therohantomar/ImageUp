@@ -9,9 +9,6 @@ const Home = React.memo(() => {
   const searchPara=useContext(searchContext)
   const searchText=searchPara?.searchText
   const photos:UnsplashDataType[] | UnsplashSearchTypes  = usePhotos(searchText);
-  
-
-
 
 if(Array.isArray(photos)){
   if(photos?.length===0){
@@ -20,18 +17,15 @@ if(Array.isArray(photos)){
     </main>)
   }
 }
-  
 
   return (
     <main className="my-8">
       <h1 className="font-bold text-xl font-sans my-10 mx-10 uppercase">Disover the new captures clicks by camera</h1>
-      <div className="w-full grid grid-cols-3 bg-gray-100 gap-0  border-2     ">
-      
+      <div className="grid-container"   >
         {
         Array.isArray(photos) && photos.map((photodata:UnsplashDataType | Results) => {
           return <Photocard key={photodata.id} {...photodata} />;
         })}
-      
       </div>
     </main>
   );

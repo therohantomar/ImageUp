@@ -21,12 +21,11 @@ function Photocard({
   urls: urls;
 }) {
   return (
-    <div>
+    <div className="grid-item">
       <Link to={"photos/" + id}>
         <img
           loading="eager"
           src={urls.small}
-          className="hover:shadow-xl  hover:rounded-md w-full h-auto "
           alt={slug}
         />
       </Link>

@@ -5,7 +5,6 @@ import { ContextState } from "../utils/searchContext";
 
 const Header = () => {
   const searchPara = useContext<ContextState | null>(searchContext);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (searchPara !== null) {
       searchPara.setSearchText(e.target.value);
