@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import { Provider } from "react-redux";
 import store from "./utils/store/store";
 import { searchContext } from "./utils/searchContext";
+import PhotoDetail from "./components/PhotoDetail";
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const BrowserRouter = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path:"photos/:id",
+        element:<PhotoDetail/>
       },
     ],
   },

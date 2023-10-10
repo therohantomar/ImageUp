@@ -24,10 +24,10 @@ function Photocard({
     <div >
       <Link to={"photos/" + id}>
         <img
-          src={urls.full}
+          loading="eager"
+          src={urls.small}
           className="hover:shadow-xl  hover:rounded-md w-full h-auto "
           alt={slug}
-          loading="lazy"
         />
       </Link>
     </div>

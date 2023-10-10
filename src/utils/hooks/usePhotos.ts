@@ -18,24 +18,17 @@ export default function usePhotos(searchText: string | undefined) {
         const data = await fetch(QUERY_PHOTOS + query + `&client_id=${import.meta.env.VITE_APP_ACCESS_KEY}`)
         const result = await data.json()
         setPhotos(result.results)
-        dispatch(GetPhotos(result.result))
-
     }
     async function getPhotos() {
-        
         if (memoizedPhotos?.length === 0) {
             const data = await fetch(NEW_PHOTOS_LINK + import.meta.env.VITE_APP_ACCESS_KEY)
             const Photos: UnsplashDataType[] = await data.json()
             setPhotos(Photos)
             dispatch(GetPhotos(Photos))
         }
-        else if(memoizedPhotos===undefined){   
-            getPhotos()
-        }
         else {
             setPhotos(memoizedPhotos)
         }
-
     }
 
     useEffect(() => {
@@ -46,7 +39,7 @@ export default function usePhotos(searchText: string | undefined) {
         else {
             timeoutId = setTimeout(() => {
                 getPhotosByQuery(searchText)
-            }, 300)
+            }, 150)
          }
         return () => {
             clearTimeout(timeoutId)

@@ -4,7 +4,7 @@ import memoPhotos from "./features/memoizePhotosSlice"
 
 const store=configureStore({
     reducer:{
-      memoPhotos:memoPhotos
+      memoPhotos:memoPhotos,
     }
 })
 
