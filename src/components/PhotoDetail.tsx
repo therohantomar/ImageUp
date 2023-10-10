@@ -13,13 +13,13 @@ const PhotoDetail = () => {
      {photoData &&<div>
        <Link to="/"><RxCross2 className=" font-bold text-4xl" /></Link>
        <span className="flex gap-4 mx-6  ">
-        <img src={photoData?.user?.profile_image?.large}  className="rounded-full"  alt={photoData?.user?.name}  />
+        <img src={photoData?.user?.profile_image?.large} loading="eager"  className="rounded-full"  alt={photoData?.user?.name}  />
        <span className="my-2 w-2/3">
         <h1 className=" text-gray-500 xs:text-sm sm:text-md md:text-md lg:text-md xl:text-lg 2xl:text-lg font-bold">{photoData?.user?.name}</h1>
         <h1 className=" xs:text-sm sm:text-md md:text-md lg:text-md xl:text-lg 2xl:text-lg font-sans text-gray-600  font-bold">{photoData?.user?.bio}</h1>
         </span>
       </span>
-      <img src={photoData?.urls?.regular}  alt={photoData?.slug} className="p-8  w-3/4 h-full  rounded-md"  />
+      <img src={photoData?.urls?.regular}  alt={photoData?.slug} loading="eager" className="p-8  w-3/4 h-full  rounded-md"  />
       </div>}
     </div>
   )
