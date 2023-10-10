@@ -39,7 +39,7 @@ export default function usePhotos(searchText: string | undefined) {
         else {
             timeoutId = setTimeout(() => {
                 getPhotosByQuery(searchText)
-            }, 150)
+            }, 250)
          }
         return () => {
             clearTimeout(timeoutId)
